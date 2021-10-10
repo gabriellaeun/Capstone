@@ -24,13 +24,15 @@ public class ARPlaceOnPlane : MonoBehaviour
 
     private void PlaceObjectByTouch()
     {
-        if (Input.touchCount > 0) //touchCount : 화면에 접촉되어 있는 손가락 갯수
+        if (Input.touchCount > 0) //스크린에 터치가 일어났는지 확인(touchCount : 화면에 접촉되어 있는 손가락 갯수)
         {
             Touch touch = Input.GetTouch(0); //가장 먼저 터치가 일어난 곳의 터치가 일어난 객체 정보 반환
             //어느 위치에서 터치가 일어났는지 얻어올거임
             
+
+            //=================================================================================================================================
             //터치가 일어난 곳으로 Ray를 쏴야 함
-            List<ARRaycastHit> hits = new List<ARRaycastHit>();
+            List<ARRaycastHit> hits = new List<ARRaycastHit>(); //hit이 일어난 객체를 반환받기 위한 list 선언
             if(arRaycaster.Raycast(touch.position, hits, TrackableType.Planes))
             {
                 Pose hitPose = hits[0].pose;
