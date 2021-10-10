@@ -10,12 +10,7 @@ public class ARPlaceOnPlane : MonoBehaviour
     public GameObject placeObject;
     GameObject spawnObject;
 
-    void Start()
-    {
-        
-    }
     
-    // Update is called once per frame
     void Update()
     {
         //UpdateCenterObject();
